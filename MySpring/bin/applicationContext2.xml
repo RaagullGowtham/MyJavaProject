@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Define your beans here -->
+    
+        <!-- Define your beans here -->
+    <bean id="emp" class="springbasics.Employee"/>
+      <bean id="bobj1" class="dependencyinjection.B">
+    <constructor-arg name="b" value="78"/>
+    <constructor-arg name="msg" value="Hi All"/>
+       		
+    	</bean>
+    <bean id="aobj1" class="dependencyinjection.A">
+    <property name="a" value="78"/>
+    <property name="msg" value="Hello All"/>
+    		
+    	</bean>
+    	<bean id="abobj" class="dependencyinjection.AB" >
+    	     <constructor-arg ref="bobj1"/>
+    	      <constructor-arg ref="aobj1"/>
+    	</bean>	
+    
+     
+  
+</beans>
+
+
+
+
